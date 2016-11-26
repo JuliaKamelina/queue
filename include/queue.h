@@ -2,6 +2,8 @@
 #define _QUEUE_H_
 
 #include <stdio.h>
+#include <stdexcept>
+using namespace std;
 
 struct CNode {
   int data;
@@ -47,7 +49,7 @@ class queue {
         finish = start;
       delete node;
     } else
-       throw 1;
+       throw logic_error("Queue is empty");
   }
   bool isEmpty() {
     return (0 == size);
@@ -56,15 +58,15 @@ class queue {
     if (size)
       return start->data;
     else
-      throw 1;
+      throw logic_error("Queue is empty");
   }
   int &back() {
     if (size)
       return finish->data;
     else
-      throw 1;
+      throw logic_error("Queue is empty");
   }
 };
-double * queueSum(int*, int, int);
+void queueSum(int*, int, int, double*);
 
 #endif  // _QUEUE_H_

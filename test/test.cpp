@@ -54,11 +54,11 @@ TEST(test_queue, can_get_back) {
 TEST(test_queueSum, returns_correct_value) {
   int data[7] = {1, 5, 7, 8, 6, 4, 3};
   int w = 4;
-  double* res;
+  double res[4];
   
   double expData[4] = {5.25, 6.5, 6.25, 5.25};
   
-  res = queueSum(data, w, 7);
+  queueSum(data, w, 7, res);
   
   for (int i = 0; i < 4; i++)
     EXPECT_EQ(res[i], expData[i]);

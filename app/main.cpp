@@ -1,10 +1,11 @@
 #include "queue.h"
 int main() {
-  int w = 3;
-  int size = 7;
-  int data[7] = {1, 5, 7, 8, 6, 4, 3};
+  const int w = 3;
+  const int size = 7;
+  int data[size] = {1, 5, 7, 8, 6, 4, 3};
+  double res[size - w + 1];
 
-  double* res = queueSum(data, w, size);
+  queueSum(data, w, size, res);
   for (int i = 0; i < size - w + 1; i++)
     printf("%lf ", res[i]);
 }
