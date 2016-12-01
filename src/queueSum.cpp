@@ -1,5 +1,3 @@
-#include <cmath>
-#include <stdlib.h>
 #include "queue.h"
 
 void queueSum(int* data, int w, int size, double *res) {
